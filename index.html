@@ -197,6 +197,66 @@ header{
   color:#C9D2E0;font-size:12.5px;padding:8px 14px 10px;
 }
 
+/* ===== 數據信任帶 ===== */
+.stat-strip{
+  border-block:1px solid var(--line-soft);
+  background:var(--surface);
+  padding:28px 0;
+}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{display:flex;align-items:center;justify-content:center;gap:14px}
+.stat .num{
+  font-size:40px;font-weight:900;color:var(--accent);line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.stat .num small{font-size:18px;font-weight:900;margin-left:2px}
+.stat .lbl{font-size:14.5px;color:var(--muted);line-height:1.5}
+.stat .lbl b{display:block;color:var(--ink);font-size:15.5px}
+@media (max-width:820px){
+  .stat-grid{grid-template-columns:1fr;gap:18px}
+  .stat{justify-content:flex-start}
+}
+
+/* ===== 中段 CTA ===== */
+.mid-cta{margin-top:40px;text-align:center}
+.mid-cta .btn-line{font-size:17px}
+.mid-cta small{display:block;margin-top:12px;font-size:13.5px;color:var(--muted)}
+.works .mid-cta small{color:#A8AEB9}
+
+/* ===== 訊息範本 ===== */
+.tpl-card{
+  max-width:640px;margin:44px auto 0;
+  background:var(--surface);border:1px solid var(--line-soft);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-pop);
+  overflow:hidden;
+}
+.tpl-head{
+  background:var(--accent-soft);padding:14px 24px;
+  font-weight:900;color:var(--accent-deep);font-size:15px;
+  letter-spacing:.04em;
+}
+.tpl-body{padding:24px}
+.tpl-msg{
+  background:#F0FBEF;border:1px dashed var(--green-deep);
+  border-radius:var(--radius-md);padding:18px 20px;
+  font-size:15px;line-height:2;white-space:pre-line;
+}
+.tpl-msg mark{
+  background:var(--accent-soft);color:var(--accent-deep);
+  font-weight:700;border-radius:4px;padding:0 4px;
+}
+.tpl-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.tpl-actions .btn{font-size:15.5px;padding:13px 26px}
+.btn-copy{
+  background:var(--ink);color:#fff;border:none;cursor:pointer;
+  font-family:var(--font);
+}
+.btn-copy:hover{background:#3A404B;transform:translateY(-2px)}
+.btn-copy.ok{background:var(--green-deep)}
+@media (max-width:560px){
+  .tpl-actions .btn{width:100%;justify-content:center}
+}
+
 /* ===== 對比區 ===== */
 .compare-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px;
@@ -584,6 +644,24 @@ footer{
   </div>
 </section>
 
+<!-- ===== 數據信任帶 ===== -->
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div class="stat reveal">
+      <span class="num">15<small>集</small></span>
+      <span class="lbl"><b>連載動畫實際產出</b>角色跨集穩定不走鐘</span>
+    </div>
+    <div class="stat reveal">
+      <span class="num">15<small>講</small></span>
+      <span class="lbl"><b>線上課程完整交付</b>從課綱到成片一次到位</span>
+    </div>
+    <div class="stat reveal">
+      <span class="num">4<small>關</small></span>
+      <span class="lbl"><b>逐關過目才交付</b>腳本、初版、字幕、配音關關確認</span>
+    </div>
+  </div>
+</div>
+
 <!-- ===== 對比 ===== -->
 <section id="compare">
   <div class="wrap">
@@ -691,7 +769,14 @@ footer{
         </figcaption>
       </figure>
     </div>
-    <p class="works-note reveal">這些不是特例——<b>你的影片也會用同一套製作標準交付</b>。想看更多類型的範例，LINE 上跟我們說。</p>
+    <p class="works-note reveal">這些不是特例——<b>你的影片也會用同一套製作標準交付</b>。</p>
+    <div class="mid-cta reveal">
+      <a class="btn btn-line" href="https://lin.ee/your-line-id" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.42 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.87c-.04.26-.2 1.01.88.55 1.09-.46 5.87-3.46 8.01-5.92C21.56 13.35 22 11.83 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+        傳你的商品照或想法到 LINE｜免費估影片方向
+      </a>
+      <small>想看更多類型的範例，LINE 上直接跟我們說</small>
+    </div>
   </div>
 </section>
 
@@ -819,6 +904,13 @@ footer{
       </div>
     </div>
     <p class="chain-note reveal">每一關你點頭了才往下走——改方向永遠在最便宜的階段改。</p>
+    <div class="mid-cta reveal">
+      <a class="btn btn-line" href="https://lin.ee/your-line-id" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.42 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.87c-.04.26-.2 1.01.88.55 1.09-.46 5.87-3.46 8.01-5.92C21.56 13.35 22 11.83 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+        先拿免費報價單，看完再決定要不要做
+      </a>
+      <small>問完不做也完全沒關係，不會有人一直催你</small>
+    </div>
   </div>
 </section>
 
@@ -892,6 +984,24 @@ footer{
         <div class="ans">可以，自媒體與短劇連載都支援長期方案，固定週期交付。長期合作另有優惠，歡迎在 LINE 上直接詢問。</div>
       </details>
     </div>
+
+    <div class="tpl-card reveal" id="template">
+      <div class="tpl-head">💬 不知道怎麼開口？照抄這句傳過來就好</div>
+      <div class="tpl-body">
+        <p class="tpl-msg" id="tplMsg">你好，我想找你們做影片：
+① 類型：<mark>廣告／短劇／課程／自媒體（擇一）</mark>
+② 用途：<mark>例如：新品上市、招生、經營頻道</mark>
+③ 長度：<mark>例如：30 秒，不確定也沒關係</mark>
+④ 參考：<mark>有喜歡的影片可以貼連結給我們</mark></p>
+        <div class="tpl-actions">
+          <button class="btn btn-copy" id="copyTpl" type="button">📋 複製這段訊息</button>
+          <a class="btn btn-line" href="https://lin.ee/your-line-id" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.42 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.87c-.04.26-.2 1.01.88.55 1.09-.46 5.87-3.46 8.01-5.92C21.56 13.35 22 11.83 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+            打開 LINE 貼上送出
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -920,6 +1030,22 @@ footer{
 </footer>
 
 <script>
+const copyBtn=document.getElementById('copyTpl');
+if(copyBtn){
+  copyBtn.addEventListener('click',async()=>{
+    const txt='你好，我想找你們做影片：\n① 類型：\n② 用途：\n③ 長度：\n④ 參考：';
+    try{
+      await navigator.clipboard.writeText(txt);
+    }catch(e){
+      const ta=document.createElement('textarea');
+      ta.value=txt;document.body.appendChild(ta);ta.select();
+      document.execCommand('copy');ta.remove();
+    }
+    copyBtn.textContent='✅ 已複製，去 LINE 貼上吧';
+    copyBtn.classList.add('ok');
+    setTimeout(()=>{copyBtn.textContent='📋 複製這段訊息';copyBtn.classList.remove('ok');},2600);
+  });
+}
 const vids=document.querySelectorAll('.work-card video');
 vids.forEach(v=>v.addEventListener('play',()=>{
   vids.forEach(o=>{if(o!==v)o.pause();});
